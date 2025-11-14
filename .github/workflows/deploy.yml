@@ -3,7 +3,7 @@ name: Deploy to Hostinger
 on:
   push:
     branches:
-      - main  # or master, depending on your branch name
+      - main
 
 jobs:
   deploy:
@@ -13,10 +13,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
       
-    - name: FTP Deploy
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+    - name: SFTP Deploy
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
         server: 82.25.96.249
         username: u521468402
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /domains/techykoala.com/public_html/
+        port: 65002
+        local_path: './*'
+        remote_path: '/domains/techykoala.com/public_html'
