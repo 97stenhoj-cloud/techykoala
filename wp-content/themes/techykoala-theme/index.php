@@ -69,7 +69,7 @@ get_header(); ?>
             <div class="grid grid-2" style="gap: 40px; align-items: center;">
                 <div class="card" style="background: linear-gradient(135deg, #fef3c7, #fed7aa); padding: 60px 40px; text-align: center; min-height: 400px; display: flex; align-items: center; justify-content: center;">
                     <div>
-                        <div style="font-size: 8rem; margin-bottom: 20px;">📱</div>
+                        <img src="https://tpjsebutbieghpmvpktv.supabase.co/storage/v1/object/public/AppIcon/AppIcon.png" alt="Connect App" style="width: 150px; height: 150px; border-radius: 32px; margin-bottom: 20px; box-shadow: 0 12px 40px rgba(0,0,0,0.15);">
                         <p style="font-size: 1.1rem; color: var(--text-dark); font-weight: 600;">Beautiful. Simple. Yours.</p>
                     </div>
                 </div>

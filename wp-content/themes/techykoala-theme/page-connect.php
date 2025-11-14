@@ -14,7 +14,7 @@ get_header(); ?>
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div style="font-size: 5rem; margin-bottom: 20px;">📱✨</div>
+                <img src="https://tpjsebutbieghpmvpktv.supabase.co/storage/v1/object/public/AppIcon/AppIcon.png" alt="Connect App" style="width: 120px; height: 120px; border-radius: 28px; margin-bottom: 30px; box-shadow: 0 12px 40px rgba(0,0,0,0.15);">
                 <h1>Meet Connect</h1>
                 <p>The app that makes staying in touch feel warm, cozy, and effortless. Build meaningful connections without the overwhelm.</p>
                 <div class="hero-buttons">
