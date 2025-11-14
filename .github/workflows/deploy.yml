@@ -13,12 +13,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
       
-    - name: SFTP Deploy
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: 82.25.96.249
-        username: u521468402
+        server: ftp.techykoala.com
+        username: u521468402@techykoala.com
         password: ${{ secrets.FTP_PASSWORD }}
-        port: 65002
-        local_path: './*'
-        remote_path: '/domains/techykoala.com/public_html'
+        protocol: ftps
+        port: 21
+        server-dir: /public_html/
+        timeout: 600000
