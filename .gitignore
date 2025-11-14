@@ -1,0 +1,23 @@
+# WordPress Core
+/wp-admin/
+/wp-includes/
+/wp-content/index.php
+/wp-content/languages
+/wp-content/plugins/index.php
+/wp-content/themes/index.php
+
+# Configuration files with sensitive info
+wp-config.php
+.htaccess
+
+# Uploads and cache
+/wp-content/uploads/
+/wp-content/cache/
+/wp-content/upgrade/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# SFTP credentials
+.vscode/sftp.json

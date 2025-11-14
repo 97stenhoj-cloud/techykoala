@@ -1,0 +1,116 @@
+/* --- CONNECT PAGE STYLING --- */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.connect-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8bbd9 0%, #7b6592 50%, #ffe0b2 100%);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Logo */
+.connect-logo {
+    width: 160px;
+    margin-bottom: 20px;
+}
+/* Logo size */
+.connect-header img {
+    max-width: 160px;   /* resize logo */
+    height: auto;
+    display: block;
+}
+
+
+/* Title */
+.connect-title {
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Subtitle */
+.connect-subtitle {
+    font-size: 20px;
+    color: #ffffffcc;
+    margin-bottom: 40px;
+}
+
+/* Buttons */
+.connect-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+.connect-btn {
+    padding: 18px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+/* Pink button */
+.connect-btn.pink {
+    background: #d48fea;
+    color: white;
+}
+
+.connect-btn.pink:hover {
+    background: #c476e4;
+}
+
+/* Beige button */
+.connect-btn.beige {
+    background: #f3e8df;
+    color: #7b5b44;
+}
+
+.connect-btn.beige:hover {
+    background: #e6d8ca;
+}
+
+/* White button */
+.connect-btn.white {
+    background: white;
+    color: #7b6592;
+}
+
+.connect-btn.white:hover {
+    background: #f4f4f4;
+}
+
+/* Navigation */
+.connect-nav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.connect-nav a {
+    color: #f500a0;          /* your vivid magenta */
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.connect-nav a:hover {
+    opacity: 0.7;
+}
+
+.connect-main img {
+    max-width: 420px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
