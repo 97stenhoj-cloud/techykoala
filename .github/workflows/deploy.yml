@@ -1,27 +1,34 @@
-name: Deploy to Hostinger
+name: Trigger Hostinger Deployment
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  notify:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-      
-    - name: Install lftp
-      run: sudo apt-get install -y lftp
-      
-    - name: Deploy via lftp
+    - name: Trigger Hostinger Webhook
       env:
-        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        WEBHOOK_URL: ${{ secrets.HOSTINGER_WEBHOOK_URL }}
+        WEBHOOK_SECRET: ${{ secrets.HOSTINGER_WEBHOOK_SECRET }}
       run: |
-        lftp -c "
-        set ssl:verify-certificate no;
-        open -u u521468402,$FTP_PASSWORD ftp://82.25.96.249:21;
-        mirror -Rev ./ /domains/techykoala.com/public_html --ignore-time --parallel=10 --exclude .git/ --exclude .github/
-        "
+        curl -X POST "$WEBHOOK_URL" \
+          -H "Content-Type: application/json" \
+          -H "X-Hub-Signature-256: sha256=$WEBHOOK_SECRET" \
+          -d '{
+            "ref": "refs/heads/main",
+            "repository": {
+              "name": "${{ github.repository }}",
+              "url": "${{ github.repositoryUrl }}"
+            },
+            "pusher": {
+              "name": "${{ github.actor }}"
+            }
+          }'
+    
+    - name: Deployment Triggered
+      run: echo "✅ Hostinger webhook triggered successfully!"
